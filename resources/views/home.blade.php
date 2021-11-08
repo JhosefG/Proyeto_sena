@@ -3,16 +3,13 @@
 @section('content')
 
 <style>
-    body{
-            background-image: url({{ asset('images/Fondo_principal.jpg') }});
-    }
     .title {
         font-family: 'Pacifico';
         font-weight: normal;
         font-size: 40px;
         text-align: center;
         line-height: 1.4;
-        color: white;
+        color: rgb(0, 0, 0);
 
 
     }

@@ -3,11 +3,7 @@
 @section('titulo', 'crear nuevo')
 
 @section('content')
-<style>
-        body{
-                background-image: url({{ asset('images/inventario.jpg') }});
-            }
-</style>
+
 <h1 class="text-center my-5">Crear nuevo</h1>
 @if ($errors->any())
     <div class="alert alert-danger">

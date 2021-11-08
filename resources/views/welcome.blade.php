@@ -9,11 +9,6 @@
     </div>
     
     <style>
-        body{
-            background-attachment: fixed;
-            background-image: url({{ asset('images/Fondo_principal.jpg') }});
-            
-        }
 
         h1{
             color: rgb(165, 0, 0);

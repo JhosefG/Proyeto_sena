@@ -1,11 +1,6 @@
 @extends('layouts.app')
 @section('titulo', 'Registrarse')
 @section('content')
-<style>
-    body{
-            background-image: url({{ asset('images/Fondo_principal.jpg') }});
-        }
-</style>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

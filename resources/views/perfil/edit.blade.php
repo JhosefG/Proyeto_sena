@@ -3,11 +3,7 @@
 @section('titulo', 'Editar')
 
 @section('content')
-<style>
-    body{
-            background-image: url({{ asset('images/inventario.jpg') }});
-        }
-</style>
+
 <h1 class="text-center my-5">Editar producto</h1>
 @if ($errors->any())
 

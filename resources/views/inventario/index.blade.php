@@ -2,11 +2,7 @@
 
 @section('titulo', 'INVENTARIO')
 @section('content')
-<style>
-    body{
-            background-image: url({{ asset('images/inventario.jpg') }});
-        }
-</style>
+
 
     <h1 class = "text-center pt-5 pb-3">INVENTARIO</h1>
 
