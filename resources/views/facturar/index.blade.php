@@ -29,13 +29,7 @@
               <h4>Proyecto</h4>
           </label>
           <select name="clienteId" class="form-select" id="clinteId">
-              @foreach ($cliente as $clientes)
-                  <option value="{{ $cliente->id }}" @if ($cliente->clienteId == $cliente->id)
-                      selected
-              @endif>
-              {{ $cliente->nombre }}
-              </option>
-              @endforeach
+              
           </select>
           </div>
 
@@ -44,7 +38,7 @@
           <thead>
             <tr>
               <th>Producto</th>
-              <th>Precio/unidad</th>
+              <th>Precio de unidad</th>
               <th>cantidad</th>
               <th>Total</th>
               <th></th>
