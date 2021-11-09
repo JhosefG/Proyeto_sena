@@ -4,15 +4,11 @@
 
 @section('content')
 <style>
-        body{
-                background-image: url({{ asset('images/Fondo_Clientes.png') }});
-                
-            }
         h4{
-            color: white;
+            color: rgb(0, 0, 0);
         }
         h1{
-        color: rgb(255, 251, 0);
+        color: rgb(0, 0, 0);
         }
 </style>
 <h1 class="text-center my-5">Crear nuevo cliente</h1>
@@ -34,10 +30,12 @@
     <div >
         <label for="id" class="form-label texto my"> <h4>Numero de identificacion</h4></label>
         <input type="number" class="form-control" name="id" id="id" placeholder="0" value="{{old('id')}}">
+        <br>
     </div>
     <div >
         <label for="nombre" class="form-label texto my"> <h4>Nombre del cliente</h4></label>
         <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre del cliente" value="{{old('nombre')}}">
+        <br>
     </div>
     <div class="mb-3">
         <label for="apellidos" class="form-label texto my"> <h4>Apellidos del cliente</h4></label>

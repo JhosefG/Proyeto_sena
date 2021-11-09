@@ -25,6 +25,18 @@
             <br>
             <h2>FACTURA</h2>
             <p>Fecha: <input type="date" ></p>
+            <label for="proyectoId" class="form-label texto my-2">
+              <h4>Proyecto</h4>
+          </label>
+          <select name="clienteId" class="form-select" id="clinteId">
+              @foreach ($cliente as $clientes)
+                  <option value="{{ $cliente->id }}" @if ($cliente->clienteId == $cliente->id)
+                      selected
+              @endif>
+              {{ $cliente->nombre }}
+              </option>
+              @endforeach
+          </select>
           </div>
 
         </div>

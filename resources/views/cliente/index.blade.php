@@ -3,11 +3,9 @@
 @section('titulo', 'Clientes')
 @section('content')
 <style>
-    body{
-            background-image: url({{ asset('images/Fondo_Clientes.png') }});
-        }
+    
     h1{
-        color: rgb(255, 251, 0);
+        color: rgb(0, 0, 0);
     }
 </style>
     
@@ -30,8 +28,8 @@
     </div>
     @endif
     
-    <div class="card">
-    <table class="table table-hover">
+    <div class="">
+    <table class="table table-hover table-secondary">
         <thead>
             <tr>
                 <th>Numero de documento</th>

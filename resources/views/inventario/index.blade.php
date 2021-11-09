@@ -20,7 +20,7 @@
     </div>
     @endif
     
-    <div class="card">
+    <div class="">
     <table class="table table-secondary table-hover">
         <thead>
             <tr>
