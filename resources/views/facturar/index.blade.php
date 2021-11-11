@@ -26,7 +26,7 @@
             <h2>FACTURA</h2>
             <p>Fecha: <input type="date" ></p>
             <label for="proyectoId" class="form-label texto my-2">
-              <h4>Proyecto</h4>
+              <h4>CLIENTE</h4>
           </label>
           <select name="clienteId" class="form-select" id="clinteId">
               
