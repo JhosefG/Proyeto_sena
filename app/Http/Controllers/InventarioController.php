@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Inventario;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Auth;
 
 class InventarioController extends Controller
 {
@@ -16,6 +18,11 @@ class InventarioController extends Controller
     public function index(Request $request)
     {
         {
+            if (gate::denies('administrador')){
+
+                return redirect(route('home'));
+            }
+            
             if($request){
                 $query = $request->buscar;
                 $inventario = Inventario::where('nombre','LIKE','%'.$query.'%')
@@ -131,16 +138,20 @@ class InventarioController extends Controller
         return redirect('/login');
     }
 
-    public function newprofile(Request $request){
-        
-        Auth::logout();
-        return redirect()->route('/register');
+    public function __construct(){
+
+        $this->middleware('auth');
+
     }
 
 
-    
+    public function irInventario(){
 
-    
+       
+        $user = Auth::user();
+        return view('inventario.index',compact('inventario'));
+
+    }
     
 
 
