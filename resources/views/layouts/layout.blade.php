@@ -54,7 +54,7 @@
                             {{ Auth::user()->name }}
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dropDesarrolladores" >
-                            <li><a class="dropdown-item" href="{{ route('home') }}">Menu Principal</a></li>
+                            <li><a class="dropdown-item" href="{{ route('register') }}">Crear Nuevo Usuario</a></li>
                             <li><a class="dropdown-item" href="{{ route('perfil.index') }}">Ver perfil</a></li>
                             
                             <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">

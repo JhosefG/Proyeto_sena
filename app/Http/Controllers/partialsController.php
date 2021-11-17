@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cliente;
 use App\Models\Inventario;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Gate;
-use Illuminate\Support\Facades\Auth;
 
-class InventarioController extends Controller
+class ClienteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,21 +17,16 @@ class InventarioController extends Controller
     public function index(Request $request)
     {
         {
-            if (gate::denies('administrador')){
-
-                return redirect(route('home'));
-            }
-            
             if($request){
                 $query = $request->buscar;
-                $inventario = Inventario::where('nombre','LIKE','%'.$query.'%')
-                                                ->orderBy('nombre','asc')
+                $cliente = Cliente::where('id','LIKE','%'.$query.'%')
+                                                ->orderBy('id','asc')
                                                 ->get();
-                return view('inventario.index', compact('inventario', 'query'));
+                return view('cliente.index', compact('cliente', 'query'));
             }
-            $inventario = Inventario::orderBy('nombre','asc')->get();
+            $cliente = Cliente::orderBy('nombre','asc')->get();
             //Enviar a la vista
-            return view('inventario.index');
+            return view('facturacion.index');
         }
     }
 
@@ -46,7 +40,7 @@ class InventarioController extends Controller
     {
         
         //Enviar a la vista
-        return view('inventario.insert');
+        return view('cliente.insert');
     }
 
     /**
@@ -60,100 +54,83 @@ class InventarioController extends Controller
         //
         // dd($request);
         $request->validate([
+            'id'=> 'required',
             'nombre'=> 'required',
-            'cantidad'=> 'required'
+            'apellidos'=> 'required'
         ]);
 
-        Inventario::create($request->all());
+        Cliente::create($request->all());
         //Retornar la vista
-        return redirect()->route('inventario.index')->with('exito','Se ha guardado el producto exitosamente.');
+        return redirect()->route('cliente.index')->with('exito','Se ha guardado el cliente exitosamente.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Inventario  
+     * @param  \App\Models\Cliente  
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
         //
-        $inventario = Inventario::FindOrFail($id);
+        $cliente = Cliente::FindOrFail($id);
         //Enviar a la vista
-        return view('inventario.view', compact('inventario'));
+        return view('cliente.view', compact('cliente'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Inventario 
+     * @param  \App\Models\Cliente 
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         //
-        $inventario = Inventario::FindOrFail($id);
+        $cliente = Cliente::FindOrFail($id);
         //Enviar a la vista
-        return view('inventario.edit', compact('inventario'));
+        return view('cliente.edit', compact('cliente'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Inventario 
+     * @param  \App\Models\Cliente 
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         //
         $request->validate([
+            'id'=> 'required',
             'nombre'=> 'required',
-            'cantidad'=> 'required'
+            'apellidos'=> 'required'
         ]);
 
-        $inventario = Inventario::FindOrFail($id);
+        $cliente = Cliente::FindOrFail($id);
 
-        $inventario->update($request->all());
+        $cliente->update($request->all());
         //Retornar la vista
-        return redirect()->route('inventario.index')->with('exito','Se ha modificado el producto exitosamente.');
+        return redirect()->route('cliente.index')->with('exito','Se ha modificado el cliente exitosamente.');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Inventario  
+     * @param  \App\Models\Cliente  
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $inventario = Inventario::findOrfail($id);
+        $cliente = Cliente::findOrfail($id);
 
-        $inventario->delete();
-        return redirect()->route('inventario.index')->with('exito','¡Se ha eliminado el producto corectamente!');
+        $cliente->delete();
+        return redirect()->route('cliente.index')->with('exito','¡Se ha eliminado el cliente corectamente!');
     }
     
     public function logout(Request $request) {
         Auth::logout();
         return redirect('/login');
     }
-
-    public function __construct(){
-
-        $this->middleware('auth');
-
-    }
-
-
-    public function irInventario(){
-
-       
-        $user = Auth::user();
-        return view('inventario.index',compact('inventario'));
-
-    }
-    
-
-
 }
-

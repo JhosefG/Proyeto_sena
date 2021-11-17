@@ -25,7 +25,7 @@
                                 @enderror
                             </div>
                         </div>
-
+                        <br>
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 

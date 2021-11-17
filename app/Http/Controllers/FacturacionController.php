@@ -15,11 +15,9 @@ class FacturacionController extends Controller
         return view('facturar.index');
 
     }
-
-
     public function create()
     {
-        
+        $clientes= Cliente::orderBy('nombre','asc')->get();
     }
 
     public function edit(){

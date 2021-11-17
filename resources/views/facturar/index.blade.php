@@ -7,7 +7,6 @@
 <div class="container">
   <head>
       <link rel="stylesheet" href="{{ asset('css/facturar.css') }}">
-      
   </head>
 <div class="page-container">
     <main class="main">
@@ -27,10 +26,49 @@
             <p>Fecha: <input type="date" ></p>
             <label for="proyectoId" class="form-label texto my-2">
               <h4>CLIENTE</h4>
-          </label>
-          <select name="clienteId" class="form-select" id="clinteId">
-              
-          </select>
+            </label>
+            <br>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal1">Cliente</button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="Modal1" tabindex="-1" aria-labelledby="Modal1Label" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="Modal1Label">Seleccione el cliente </h5>
+                    
+                    
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                  <label >Buscar Cliente:
+                    <input class="form-control me-2" id="search" type="search">
+
+                  </label>
+                    <ul>
+                      @include('partials.clientes')
+                    </ul>
+
+                    <script>
+                        document.getElementById('search').addEventListener('input', function(event){
+                          console.log(event.target.value)
+                          fetch('/search?q='+event.target.value)
+                            .then(res => res.text())
+                            .then(html =>{
+                              document.querySelector('ul').innerHTML=html
+                            })
+                        })
+                    </script>
+                  </div>
+                  <div class="modal-footer">
+                    
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -45,7 +83,48 @@
             </tr>
           </thead>
           <tr>
-            <td id="producto"><input type="text"></td>
+            <td id="producto"> 
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal2">Producto</button>
+  
+              <!-- Modal -->
+              <div class="modal fade" id="Modal2" tabindex="-1" aria-labelledby="Modal2Label" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="Modal1Label">Seleccione el producto</h5>
+                      
+                      
+  
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    <label >Buscar Producto:
+                      <input id="search" class="form-control me-2" type="search">
+  
+                    </label>
+                      <ul>
+                        @include('partials.Inventario')
+                      </ul>
+  
+                      <script>
+                          document.getElementById('search').addEventListener('input', function(event){
+                            console.log(event.target.value)
+                            fetch('/search?q='+event.target.value)
+                              .then(res => res.text())
+                              .then(html =>{
+                                document.querySelector('ul').innerHTML=html
+                              })
+                          })
+                      </script>
+                    </div>
+                    <div class="modal-footer">
+                      
+                      
+                    </div>
+                  </div>
+                </div>
+              </div></td>
             <td id="precio"><input type="number" min="0"></td>
             <td id="cantidad" ><input  type="number" min="0"></td>
             <td id="total"><input type="number" min="0"></td>
