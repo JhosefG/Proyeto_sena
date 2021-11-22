@@ -8,8 +8,15 @@
         </tr>
     </thead>
     <tbody>
-        
-       
+
+        @foreach ($clientes as $clientes)
+            <tr>
+                <td> {{ $clientes->id }} </td>
+                <td> {{ $clientes->nombre}} </td>
+                <td> {{ $clientes->apellidos}} </td>
+                <td></td>
+            </tr>
+            @endforeach
 
     </tbody>
 </table>

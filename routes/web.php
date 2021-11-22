@@ -22,7 +22,7 @@ Route::get('factura', function () {
 });
 
 Route::get('/search', function () {
-        return view('partials.clientes', [
+        return view('partials.clientes','partials.Inventario', [
             'cliente' =>clientes::where('id', 'LIKE','%'.request('q').'%')->get()
             ]);
 });
