@@ -9,11 +9,12 @@
   <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 </head>
 <body>
+  <br>
 <div class="control-bar">
 <div class="container">
   <div class="row">
     <div class="col-2-4">
-      <div class="slogan">Facturación </div>
+      <div class="slogan">Facturación</div>
 
       <label for="config_tax">IVA:
         <input type="checkbox" id="config_tax" />
@@ -38,7 +39,7 @@
 <div class="logoholder text-center" >
   <br>
   <img id="logo" src="{{ asset('img/logo.jpg') }}">
-</div><!--.logoholder-->
+</div>
 
 <div class="me">
    <br>
@@ -57,7 +58,7 @@
 </div>
 
 <div class="col-1 text-right">
-  <h5>Fecha: <input class="datePicker" type="date"><br></h5>
+  <h5>Fecha: <input class="datePicker"><br></h5>
 </div>
 
 
@@ -132,7 +133,19 @@
   </thead>
   <tbody>
     <tr>
-      <td width='65%'><a class="control removeRow" href="#">x</a> <span>Descripción</span></td>
+      <td width='65%'><a class="control removeRow" href="#">x</a><span><select name="inventarioId" class="form-select" id="inventarioId">
+        <option selected>
+        @foreach ($inventario as $inventario)
+            
+            <option value="{{ $inventario->id }}" @if ($inventario->inventarioId==$inventario->id)
+                
+        @endif>
+        {{ $inventario->nombre }}
+        </option>
+        @endforeach
+        </select></span>
+      </td>
+
       <td class="amount"><input type="text" value="1"/></td>
       <td class="rate"><input type="text" value="0" /></td>
       <td class="tax taxrelated"></td>
@@ -144,7 +157,7 @@
 </div>
 
 <div class="invoicelist-footer">
-<table contenteditable>
+<table>
   <tr class="taxrelated">
     <td>IVA:</td>
     <td id="total_tax"></td>

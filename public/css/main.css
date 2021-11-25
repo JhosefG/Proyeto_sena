@@ -226,7 +226,7 @@ th {
 }
 
 html {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.5;
     color: #000;
     background: #ddd;
@@ -234,14 +234,11 @@ html {
     box-sizing: border-box
 }
 
-body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    margin: 6rem auto 0;
-    max-width: 800px;
-    background: white;
-    border: 1px solid #aaa;
-    padding: 2rem
-}
+#izquierdainventario{
+    margin-left: 15rem;
+    
+  }
+  
 
 .container {
     max-width: 800px;
@@ -583,15 +580,7 @@ h1 {
     font-weight: bold
 }
 
-footer {
-    display: block;
-    margin: 1rem 0;
-    padding: 1rem 0 0
-}
 
-footer p {
-    font-size: .8rem
-}
 
 @media print {
     html {

@@ -63,7 +63,7 @@ function calculate(){
 }
 
 
-var newRow = '<tr><td><a class="control removeRow" href="#">x</a><span>Descripción</span></td><td class="amount"><input type="text" value="1"/></td><td class="rate"><input type="text" value="0" /></td><td class="tax taxrelated"></td><td class="sum"></td></tr>';
+var newRow = '<tr><td><a class="control removeRow" href="#">x</a><span><select name="inventarioId" class="form-select" id="inventarioId"></select></span></td><td class="amount"><input type="text" value="1"/></td><td class="rate"><input type="text" value="0" /></td><td class="tax taxrelated"></td><td class="sum"></td></tr>';
 
 $('.invoicelist-body').on('keyup','input',function(){
   calculate();

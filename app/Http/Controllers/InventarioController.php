@@ -18,10 +18,6 @@ class InventarioController extends Controller
     public function index(Request $request)
     {
         {
-            if (gate::denies('administrador')){
-
-                return redirect(route('home'));
-            }
             
             if($request){
                 $query = $request->buscar;

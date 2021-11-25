@@ -15,15 +15,4 @@ class AdminController extends Controller
 
     }
 
-
-    public function irInventario(){
-
-        if (gate::denies('administrador')){
-
-            return redirect(route('home'));
-        }
-        $user = Auth::user();
-        return view('inventario.index',compact('inventario'));
-
-    }
 }
