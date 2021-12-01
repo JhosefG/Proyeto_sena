@@ -26,6 +26,7 @@
             <tr>
                 <th>Nombre</th>
                 <th>Cantidad</th>
+                <th>Precio</th>
                 <th>Opciones</th>
             </tr>
         </thead>
@@ -34,6 +35,7 @@
                 <tr>
                     <td> {{ $inventario->nombre }} </td>
                     <td> {{ $inventario->cantidad}} </td>
+                    <td> {{ $inventario->precio}} </td>
                     <br>
                     <td>
                         <a href="{{ route('inventario.show', $inventario->id) }}" class="btn btn-info">Detalles</a>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cliente;
+use App\Models\Inventario;
 
 class HomeController extends Controller
 {
@@ -23,8 +24,9 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index(){
-        $clientes= Cliente::orderBy('nombre','asc')->get();
-        return view('facturar.index',compact('clientes'));
+        $clientes=Cliente::orderBy('nombre','asc')->get();
+        $inventario=Inventario::orderBy('nombre','asc')->get();
+        return view('facturar.index',compact('clientes','inventario'));
 
     }
 

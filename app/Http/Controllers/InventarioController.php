@@ -57,7 +57,8 @@ class InventarioController extends Controller
         // dd($request);
         $request->validate([
             'nombre'=> 'required',
-            'cantidad'=> 'required'
+            'cantidad'=> 'required',
+            'precio'=> 'required'
         ]);
 
         Inventario::create($request->all());
@@ -105,7 +106,8 @@ class InventarioController extends Controller
         //
         $request->validate([
             'nombre'=> 'required',
-            'cantidad'=> 'required'
+            'cantidad'=> 'required',
+            'precio'=> 'required'
         ]);
 
         $inventario = Inventario::FindOrFail($id);

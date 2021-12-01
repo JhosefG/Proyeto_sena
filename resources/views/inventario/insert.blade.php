@@ -25,9 +25,15 @@
         <label for="nombre" class="form-label texto my"> <h4>Nombre del Producto</h4></label>
         <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre del Producto" value="{{old('nombre')}}">
     </div>
+    <br>
     <div class="mb-3">
         <label for="cantidad" class="form-label texto my"> <h4>Cantidad</h4></label>
         <input type="number" class="form-control" name="cantidad" id="cantidad" placeholder="0" value="{{old('cantidad')}}" >
+    </div>
+
+    <div class="mb-3">
+        <label for="precio" class="form-label texto my"> <h4>precio</h4></label>
+        <input type="number" class="form-control" name="precio" id="precio" placeholder="0" value="{{old('cantidad')}}" >
     </div>
     
     <button type="submit" class="btn btn-primary my-2">Guardar</button>

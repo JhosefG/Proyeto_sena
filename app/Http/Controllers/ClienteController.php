@@ -110,6 +110,7 @@ class ClienteController extends Controller
         $cliente = Cliente::FindOrFail($id);
 
         $cliente->update($request->all());
+        
         //Retornar la vista
         return redirect()->route('cliente.index')->with('exito','Se ha modificado el cliente exitosamente.');
     }

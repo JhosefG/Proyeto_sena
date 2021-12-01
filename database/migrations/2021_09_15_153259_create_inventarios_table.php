@@ -17,6 +17,7 @@ class CreateinventarioTable extends Migration
             $table->id();
             $table->string('nombre');
             $table->integer('cantidad');
+            $table->integer('precio');
             $table->timestamps();
         });
     }

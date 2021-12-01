@@ -16,6 +16,24 @@ body {
     height: 100px;
 }
 
+#cliente1{
+    
+    margin: 0;
+    border: none;
+    min-width: 0;
+    background: transparent;
+    text-align: left
+}
+
+#datetime{
+    display: inline;
+    margin: 0;
+    border: none;
+    min-width: 0;
+    background: transparent;
+    text-align: left
+}
+
 article,
 aside,
 details,
@@ -528,7 +546,7 @@ h1 {
 }
 
 .invoicelist-body .newRow {
-    margin: .5rem 0;
+    margin: 1.5rem 0;
     float: left
 }
 
@@ -540,7 +558,7 @@ h1 {
     left: -1.3rem;
     font-size: .7rem;
     border-radius: 3px 0 0 3px;
-    padding: .5rem
+    padding: 1 .5rem
 }
 
 .invoicelist-footer {

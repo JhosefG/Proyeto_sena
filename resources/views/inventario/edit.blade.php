@@ -33,6 +33,12 @@
             <label for="cantidad" class="form-label texto my-2"><h4>Cantidad</h4></label>
             <input type="number" name="cantidad" id="cantidad" value="{{ $inventario->cantidad }}" class="form-control">
         </div>
+        
+        <div>
+            <label for="precio" class="form-label texto my-2"><h4>Precio</h4></label>
+            <input type="number" name="precio" id="precio" value="{{ $inventario->precio }}" class="form-control">
+        </div>
+
         <div>
             <button type="submit" class="btn btn-primary my-2"> Guardar </button>
         </div>

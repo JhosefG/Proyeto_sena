@@ -3,6 +3,7 @@ var TAX_SETTING = false;
 $('body').addClass('hidetax hidenote hidedate');
 
 
+
 function init_date(){
   var now = new Date();
   var month = (now.getMonth() + 1);       
@@ -36,34 +37,59 @@ function init_date(){
 function calculate(){
 
   var total_price = 0,
+      subtotal = 0,
+      total_Iva = 0,
       total_tax = 0;
   
-  console.log('CALCULATING - Tax Rate:'+TAX_RATE);
+  
 
   $('.invoicelist-body tbody tr').each( function(){
     var row = $(this),
         rate   = row.find('.rate input').val(),
         amount = row.find('.amount input').val();
-    
+        
     var sum = rate * amount;
     var tax = ((sum / (TAX_RATE+100) ) * TAX_RATE);
     
+
+    total_tax = tax;
+    total_price = total_price + sum + total_tax;
+    subtotal = sum + tax;
+    total_Iva = total_tax + tax;
     
-    total_price = total_price + sum;
-    total_tax = total_tax + tax;
-    
+
     row.find('.sum').text( sum.toFixed(2) );
-    row.find('.tax').text( tax.toFixed(2) );   
+    row.find('.tax').text( tax.toFixed(2) );
+    row.find('.subtotal').text( subtotal.toFixed(2) );   
+    row.find('.total_Iva').text( total_Iva.toFixed(2) );   
   });
 
   $('#total_price').text(total_price.toFixed(2));
   $('#total_tax').text(total_tax.toFixed(2));
+  $('#total_Iva').text(total_Iva.toFixed(2));
   
 
 }
 
 
-var newRow = '<tr><td><a class="control removeRow" href="#">x</a><span><select name="inventarioId" class="form-select" id="inventarioId"></select></span></td><td class="amount"><input type="text" value="1"/></td><td class="rate"><input type="text" value="0" /></td><td class="tax taxrelated"></td><td class="sum"></td></tr>';
+var newRow = (`
+            <tr>
+              <td width='65%'><a class="control removeRow" href="#">x</a><span><select name="inventarioId" class="form-select" id="inventarioId">
+              <option selected>
+                @foreach ($inventario as $inventario)
+                  <option value="{{ $inventario->id }}" @if($inventario->inventarioId==$inventario->id)@endif>
+                  {{ $inventario->nombre }}
+                  </option>
+                @endforeach
+                  </select></span>
+              </td>
+
+              <td class="amount"><input type="text" value="1"/></td>
+              <td class="rate"><input type="text" value="0" /></td>
+              <td class="tax taxrelated"></td>
+              <td class="subtotal"></td>
+            </tr>`
+);
 
 $('.invoicelist-body').on('keyup','input',function(){
   calculate();
@@ -94,7 +120,6 @@ $('#config_tax_rate').on('keyup',function(){
   if (TAX_RATE < 0 || TAX_RATE > 100){
     TAX_RATE = 0;
   }
-  console.log('Changed tax rate to: '+TAX_RATE);
   calculate();
 });
 
