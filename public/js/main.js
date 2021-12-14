@@ -4,6 +4,7 @@ $('body').addClass('hidetax hidenote hidedate');
 
 
 
+
 function init_date(){
   var now = new Date();
   var month = (now.getMonth() + 1);       
@@ -49,7 +50,7 @@ function calculate(){
         amount = row.find('.amount input').val();
         
     var sum = rate * amount;
-    var tax = ((sum / (TAX_RATE+100) ) * TAX_RATE);
+    var tax = ((sum / (TAX_RATE+ 81) ) * TAX_RATE);
     
 
     total_tax = tax;
@@ -72,34 +73,10 @@ function calculate(){
 }
 
 
-var newRow = (`
-            <tr>
-              <td width='65%'><a class="control removeRow" href="#">x</a><span><select name="inventarioId" class="form-select" id="inventarioId">
-              <option selected>
-                @foreach ($inventario as $inventario)
-                  <option value="{{ $inventario->id }}" @if($inventario->inventarioId==$inventario->id)@endif>
-                  {{ $inventario->nombre }}
-                  </option>
-                @endforeach
-                  </select></span>
-              </td>
-
-              <td class="amount"><input type="text" value="1"/></td>
-              <td class="rate"><input type="text" value="0" /></td>
-              <td class="tax taxrelated"></td>
-              <td class="subtotal"></td>
-            </tr>`
-);
-
 $('.invoicelist-body').on('keyup','input',function(){
   calculate();
 });
 
-$('.newRow').on('click',function(e){
-  $('.invoicelist-body tbody').append(newRow);
-  e.preventDefault();
-  calculate();
-});
 
 $('body').on('click','.removeRow',function(e){
   $(this).closest('tr').remove();

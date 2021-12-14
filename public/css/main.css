@@ -1,21 +1,39 @@
 ﻿/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 
 
+
+
 html {
     font-family: sans-serif;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%
+    -ms-text-size-adjust: 90%;
+    -webkit-text-size-adjust: 90%
 }
 
 body {
+    background-color: #686868;
     margin: 0
+
+}
+.card{
+    display: block;
+    margin-left: -2.5rem;
+    background-color: white;
+}
+
+
+#inventarioId{
+    width: 80%;
+    display: block;
 }
 
 #logo{
     width: 95px;
     height: 100px;
+    margin-left: 15px;
 }
-
+.nav{
+    display: block;
+}
 #cliente1{
     
     margin: 0;
@@ -255,7 +273,7 @@ html {
 #izquierdainventario{
     margin-left: 15rem;
     
-  }
+}
   
 
 .container {
@@ -349,13 +367,15 @@ p {
 .control-bar {
     
     top: 0;
-    left: 0;
+    left: 0rem;
     right: 0;
     z-index: 100;
-    background: #686868;
-    color: white;
+    background: #bb0000;
+    color: rgb(0, 0, 0);
     line-height: 4rem;
-    height: 4rem
+    height: 4rem;
+    margin-left: -2rem;
+    
 }
 
 .control-bar .slogan {
@@ -381,14 +401,14 @@ p {
 
 .control-bar input {
     border: none;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(245, 0, 0, 0.2);
     padding: .5rem 0;
     max-width: 30px;
     text-align: center
 }
 
 .control-bar input:hover {
-    background: rgba(255, 255, 255, 0.3)
+    background: rgba(255, 0, 0, 0.3)
 }
 
 .hidetax .taxrelated {
@@ -408,17 +428,18 @@ p {
 }
 
 header {
-    margin: 1rem 0 0;
-    padding: 0 0 2rem 0;
-    border-bottom: 3pt solid #686868
+
+    margin: 5rem 0 0;
+    padding: .8rem 0;
+    border-bottom: 3pt solid #bb0000;
 }
 
 header p {
-    font-size: .9rem
+    font-size: .9rem;
 }
 
 header a {
-    color: #000
+    color: #bb0000
 }
 
 .logo {
@@ -426,7 +447,7 @@ header a {
     width: auto;
     height: auto;
     border: none;
-    fill: #686868
+    fill: #bb0000
 }
 
 .logoholder {
@@ -434,16 +455,14 @@ header a {
 }
 
 .me {
-    width: 30%
+    width: 40%;
+    margin-left: 1rem;
 }
 
 .info {
     width: 30%
 }
 
-.bank {
-    width: 26%
-}
 
 .section {
     margin: 2rem 0 0
@@ -456,15 +475,13 @@ header a {
     font-size: .9rem
 }
 
-.client {
-    margin: 0 0 3rem 0
-}
+
 
 h1 {
     margin: 0;
     padding: 0;
     font-size: 2rem;
-    color: #686868
+    color: #000000
 }
 
 .details input {
@@ -479,7 +496,7 @@ h1 {
 
 
 .invoice_detail{
-	border: solid 1px #686868;
+	border: solid 1px #000000;
 	padding:10px;
 	height:25px;
 	text-align:center
@@ -504,7 +521,7 @@ h1 {
 
 .invoicelist-body thead {
     text-align: left;
-    border-bottom: 1pt solid #666
+    border-bottom: 1pt solid #d80000c7
 }
 
 .invoicelist-body td,
@@ -514,7 +531,7 @@ h1 {
 }
 
 .invoicelist-body tr:nth-child(even) {
-    background: #ccc
+    background: #bb0000a8
 }
 
 .invoicelist-body tr:hover .removeRow {
@@ -534,7 +551,7 @@ h1 {
 .invoicelist-body .control {
     display: inline-block;
     color: white;
-    background: #686868;
+    background: #bb0000;
     padding: 3px 7px;
     font-size: .9rem;
     text-transform: uppercase;
@@ -581,7 +598,7 @@ h1 {
 
 .invoicelist-footer table #total_price {
     font-size: 2rem;
-    color: #525252
+    color: #000000
 }
 
 .note {
@@ -601,10 +618,35 @@ h1 {
 
 
 @media print {
+
+    header{
+        
+        margin: 1rem 0 0;
+        padding: 0 0 1rem 0;
+        border-bottom: 3pt solid #000000
+
+    }
+    
     html {
         margin: 0;
         padding: 0;
         background: #fff
+    }
+    .card{
+        margin-left: 0rem;
+    }
+
+    .selectpicker{
+        display: inline;
+        margin: 0;
+        border: none;
+        min-width: 0;
+        background: transparent;
+        text-align: left;
+        text-transform: uppercase;
+    }
+    h1{
+        text-transform: uppercase;
     }
     body {
         width: 100%;
@@ -616,11 +658,21 @@ h1 {
     }
     .control,
     .control-bar {
+        text-transform: uppercase;
         display: none !important
     }
+
     [contenteditable]:hover,
     [contenteditable]:focus {
-        outline: none
+        outline: #000;
+    }
+
+    #imprimir{
+        background: transparent;
+        text-transform: uppercase;
+    }
+    .logo{
+        display: none;
     }
 }
 

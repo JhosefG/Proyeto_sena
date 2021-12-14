@@ -11,6 +11,7 @@
         color: rgb(0, 0, 0);
         }
 </style>
+
 <h1 class="text-center my-5">Crear nuevo cliente</h1>
 @if ($errors->any())
     <div class="alert alert-danger">
@@ -36,10 +37,6 @@
         <label for="nombre" class="form-label texto my"> <h4>Nombre del cliente</h4></label>
         <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre del cliente" value="{{old('nombre')}}">
         <br>
-    </div>
-    <div class="mb-3">
-        <label for="apellidos" class="form-label texto my"> <h4>Apellidos del cliente</h4></label>
-        <input type="text" class="form-control" name="apellidos" id="apellidos" placeholder="apellidos del cliente" value="{{old('apellidos')}}" >
     </div>
     <button type="submit" class="btn btn-primary my-2">Guardar</button>
 </form>

@@ -12,8 +12,8 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="{{ route('home') }}">
-                <img src="{{ asset('img/logo.jpg') }}" alt="Logo" class="logo2">
+            <a class="navbar-brand" id="derecha1" href="{{ route('home') }}">
+                <img src="{{ asset('img/logo.jpg') }}" alt="Logo" class="logo3">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -48,7 +48,7 @@
                     <li class="nav-item mb-2">
                         <a class="nav-link" href="{{ route('facturar.index') }}">Facturar</a>
                     </li>
-                    <li class="nav-item dropdown" id="izquierdainventario">
+                    <li class="nav-item dropdown" id="izquierdainventario1">
                         <a class="nav-link dropdown-toggle" href="#" id="dropDesarrolladore" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             {{ Auth::user()->name }}
@@ -66,12 +66,7 @@
                             
                         </ul>
                     </li>
-                   <li>
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="buscar">
-                        <button class="btn btn-outline-success" type="submit">Buscar</button>
-                    </form>
-                   </li>
+
                     
                 </ul>
             </div>

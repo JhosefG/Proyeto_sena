@@ -1,3 +1,15 @@
+{{-- <div>
+    <label >Buscar Cliente:
+        <input wire:model='search' class="form-control me-2" id="search" type="search">
+    </label>
+
+    <ul>
+    @foreach($clientes as $cliente)
+        <li>{{ $cliente->nombre }} </li>
+    @endforeach
+    </ul>
+</div> --}}
+
 <table class="table table-hover table-secondary">
     <thead>
         <tr>
@@ -9,26 +21,10 @@
     </thead>
     <tbody>
 
-        @foreach ($clientes as $clientes)
-            <tr>
-                <td> {{ $clientes->id }} </td>
-                <td> {{ $clientes->nombre}} </td>
-                <td> {{ $clientes->apellidos}} </td>
-                <td> <button type="button" class="seleccioncliente btn btn-primary" data-bs-dismiss="modal" >Seleccionar</button></td>
-            </tr>
-        @endforeach
+       
 
     </tbody>
 </table>
-<script> 
-    
-    function seleccioncliente(){
-
-        var seleccioncliente = hola;
-
-        alert('seleccioncliente')
 
 
-    }
-    
-</script>
+

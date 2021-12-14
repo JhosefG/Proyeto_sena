@@ -19,15 +19,6 @@
             <p>{{ $cliente->nombre }}</p>
     </div>
 
-    <div class="row">
-        <div class="col-sm-3">
-            <h3>Apellidos Del cliente:</h3>
-    </div>
-
-    <div>
-        <p>{{ $cliente->apellidos }}</p>
-        </div>
-    </div>
     <a href="{{route('cliente.index')}}" class="btn btn-primary mt-3">Volver</a>
 </div>
 @endsection

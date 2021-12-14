@@ -18,5 +18,8 @@
 
     </tbody>
 </table>
+<ul>
+    
 
+</ul>
 <script src="{{ asset('js/main.js') }}"></script>

@@ -24,9 +24,7 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index(){
-        $clientes=Cliente::orderBy('nombre','asc')->get();
-        $inventario=Inventario::orderBy('nombre','asc')->get();
-        return view('facturar.index',compact('clientes','inventario'));
+        return redirect('facturar');
 
     }
 

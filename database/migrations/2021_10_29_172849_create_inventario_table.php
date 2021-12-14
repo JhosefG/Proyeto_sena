@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Rol extends Migration
+class CreateinventarioTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class Rol extends Migration
      */
     public function up()
     {
-        Schema::create('rols', function (Blueprint $table) {
-            
+        Schema::create('inventario', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-
+            $table->integer('cantidad');
+            $table->integer('precio')->foreing('inventarios.precio');
+            $table->timestamps();
         });
     }
 
@@ -28,8 +29,6 @@ class Rol extends Migration
      */
     public function down()
     {
-
-        Schema::dropIfExists('rols');
-        
+        Schema::dropIfExists('facturacion');
     }
 }

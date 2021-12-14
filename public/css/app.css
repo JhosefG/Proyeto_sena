@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
-@charset "UTF-8";
+@charset"UTF-8";
 /*!
  * Bootstrap v5.0.0-beta3 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -49,11 +49,31 @@
   margin-left: 37rem;
 }
 
+.logo2{
+    border-radius:150px;
+    width: 50px;
+    height: 50px;
+}
 
+.logo3
+{
+  position: relative;
+  top: -15px;
+  border-radius: 15px;
+  border-radius:120px;
+  width: 50px;
+  height: 50px;
+}
 
 #izquierdainventario{
   margin-left: 25rem;
 }
+
+#izquierdainventario1{
+  margin-left: 26rem;
+}
+
+
 
 body {
   margin: 0;
@@ -61,8 +81,8 @@ body {
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
-  color: #212529;
-  background-color: #f8fafc;
+  color: #000000;
+  background-color: #636262;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }

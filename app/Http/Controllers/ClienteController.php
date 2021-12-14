@@ -55,7 +55,6 @@ class ClienteController extends Controller
         $request->validate([
             'id'=> 'required',
             'nombre'=> 'required',
-            'apellidos'=> 'required'
         ]);
 
         Cliente::create($request->all());
@@ -104,7 +103,6 @@ class ClienteController extends Controller
         $request->validate([
             'id'=> 'required',
             'nombre'=> 'required',
-            'apellidos'=> 'required'
         ]);
 
         $cliente = Cliente::FindOrFail($id);

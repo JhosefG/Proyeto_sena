@@ -14,10 +14,11 @@ class CreateClientesTable extends Migration
     public function up()
     {
         Schema::create('clientes', function (Blueprint $table) {
-            $table->cedula();
-            $table->nombre();
-            $table->apellidos();
+
+            $table->id('cedula');
+            $table->string('nombre');
             $table->timestamps();
+            
         });
     }
 

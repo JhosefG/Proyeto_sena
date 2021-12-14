@@ -9,7 +9,7 @@
     }
 </style>
     
-        <h1 class = "text-center pt-5 pb-3">Clientes</h1>
+        <h1 class = "text-center pt-5 pb-3">CLIENTES</h1>
     
 
     @if($mensaje = Session::get('exito'))
@@ -34,7 +34,6 @@
             <tr>
                 <th>Numero de documento</th>
                 <th>Nombre</th>
-                <th>Apellidos</th>
                 <th>Opciones</th>
             </tr>
         </thead>
@@ -44,7 +43,6 @@
             <tr>
                 <td> {{ $clientes->id }} </td>
                 <td> {{ $clientes->nombre}} </td>
-                <td> {{ $clientes->apellidos}} </td>
                 <br>
                 <td>
                     <a href="{{ route('cliente.show', $clientes->id) }}" class="btn btn-info">Detalles</a>

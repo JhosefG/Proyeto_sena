@@ -28,7 +28,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
             <div class="container">
-                <a class="navbar-brand " href="#">
+                <a class="titulo_nav navbar-brand" href="#">
                     Lubrifiltros
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -51,7 +51,7 @@
                                 </li>
                             @endif
                             @if (Route::has('register'))
-                                <li class="nav-link disabled py-0">
+                                <li class="nav-link py-0">
                                     <a class="nav-link dropdown" href="{{ route('register') }}">{{ __('registrarse') }}</a>
                                 </li>
                             @endif
@@ -92,9 +92,8 @@
                                 <ul class="dropdown-menu" aria-labelledby="dropDesarrolladores">
                                     
                                     <li><a class="dropdown-item" href="{{ route('register') }}">Crear Nuevo Usuario</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('perfil.index') }}">Ver perfil</a></li>
                                     <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
-                                        Logout
+                                        Cerrar sesion
                                         </a>    
                                         <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
                                          {{ csrf_field() }}
